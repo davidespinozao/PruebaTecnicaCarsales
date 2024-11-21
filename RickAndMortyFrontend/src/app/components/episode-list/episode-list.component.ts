@@ -13,7 +13,7 @@ export class EpisodeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.rickAndMortyService.getEpisodes().subscribe((data: any) => {
-      this.episodes = data.results.map((episode: any) => ({
+      this.episodes = data.map((episode: any) => ({
         ...episode,
         image: this.getRandomCharacterImage(episode.characters),
       }));
