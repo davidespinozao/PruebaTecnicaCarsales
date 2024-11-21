@@ -28,5 +28,19 @@ namespace RickAndMortyBFF.Controllers
             var character = await _rickAndMortyService.GetCharacterByIdAsync(id);
             return Ok(character);
         }
+
+        [HttpGet("episodes")]
+        public async Task<IActionResult> GetEpisodes()
+        {
+            var episodes = await _rickAndMortyService.GetEpisodesAsync();
+            return Ok(episodes);
+        }
+
+        [HttpGet("episodes/{id}")]
+        public async Task<IActionResult> GetEpisodeById(int id)
+        {
+            var episode = await _rickAndMortyService.GetEpisodeByIdAsync(id);
+            return Ok(episode);
+        }
     }
 }
